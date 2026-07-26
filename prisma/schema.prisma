@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id             String   @id @default(cuid())
+  name           String
+  category       String
+  description    String
+  price          Float
+  unit           String // "كيس" | "كيلو" | "قطعة"
+  image          String // Cloudinary URL
+  isSpecial      Boolean  @default(false) // for فطير مشلتت
+  specialOptions Json? // [{qty:1, price:175}, {qty:2, price:300}]
+  isActive       Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model OrderLog {
+  id            String   @id @default(cuid())
+  items         Json // cart items snapshot
+  total         Float
+  notes         String?
+  customerPhone String?
+  createdAt     DateTime @default(now())
+}
+
+model AdminUser {
+  id       String @id @default(cuid())
+  email    String @unique
+  password String // hashed with bcrypt
+  name     String
+}
