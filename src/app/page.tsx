@@ -4,7 +4,6 @@ import FloatingWhatsApp from "@/components/public/FloatingWhatsApp";
 import Hero from "@/components/public/Hero";
 import FeaturesBar from "@/components/public/FeaturesBar";
 import ProductGrid from "@/components/public/ProductGrid";
-import GalleryGrid from "@/components/public/GalleryGrid";
 import TestimonialCard from "@/components/public/TestimonialCard";
 import Link from "next/link";
 import Image from "next/image";
@@ -70,15 +69,6 @@ export default async function HomePage() {
                 تعرف علينا أكثر
               </Link>
             </div>
-          </div>
-        </section>
-
-        <section className="bg-white py-20">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="mb-10 text-center">
-              <h2 className="font-cairo text-3xl font-bold text-charcoal sm:text-4xl">معرض الصور</h2>
-            </div>
-            <GalleryGrid />
           </div>
         </section>
 
