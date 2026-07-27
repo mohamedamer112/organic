@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const MARQUEE_EMOJIS = ["🍞", "🥖", "🥐", "🫓", "🍪", "🥯"];
 
@@ -16,6 +17,16 @@ export default function Hero() {
     >
       <div className="mx-auto w-full max-w-7xl px-6 text-right">
         <div className="max-w-xl fade-up-onview">
+          <div className="mb-6 inline-block overflow-hidden rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.25)]">
+            <Image
+              src="/images/hero-logo.jpg"
+              alt="ORGANIC FOOD - مخبوزات يمنية مصرية"
+              width={220}
+              height={220}
+              className="h-[140px] w-[140px] object-cover sm:h-[180px] sm:w-[180px]"
+              priority
+            />
+          </div>
           <h1 className="font-cairo text-4xl font-bold leading-tight text-white sm:text-6xl">
             مخبوزات أورجانيك من الحبة الكاملة
           </h1>
