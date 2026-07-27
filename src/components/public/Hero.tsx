@@ -19,7 +19,7 @@ export default function Hero() {
         <div className="max-w-xl fade-up-onview">
           <div className="mb-6 inline-block overflow-hidden rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.25)]">
             <Image
-              src="/images/hero-logo.jpg"
+              src="/images/720019158_122108624829303412_6892076907321696677_n.jpg"
               alt="ORGANIC FOOD - مخبوزات يمنية مصرية"
               width={220}
               height={220}
