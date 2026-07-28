@@ -4,13 +4,29 @@ import { prisma } from "@/lib/prisma";
 import { CartItem } from "@/types";
 import { revalidatePath } from "next/cache";
 
-export async function logOrder(items: CartItem[], total: number, notes: string) {
+export async function logOrder(
+  items: CartItem[],
+  total: number,
+  customerName: string,
+  customerPhone: string,
+  customerAddress: string,
+  notes: string
+) {
   try {
+    const combinedNotes = [
+      `الاسم: ${customerName}`,
+      `العنوان: ${customerAddress}`,
+      notes ? `ملاحظات: ${notes}` : null,
+    ]
+      .filter(Boolean)
+      .join(" | ");
+
     const order = await prisma.orderLog.create({
       data: {
         items: items as any,
         total,
-        notes: notes || null,
+        notes: combinedNotes,
+        customerPhone: customerPhone || null,
       },
     });
     revalidatePath("/admin/orders");
