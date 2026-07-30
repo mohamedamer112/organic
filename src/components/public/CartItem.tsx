@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { CartItem as CartItemType } from "@/types";
 import { useCart } from "@/hooks/useCart";
-import { formatPrice } from "@/lib/utils";
+import { formatPrice, formatWeightLabel } from "@/lib/utils";
 
 export default function CartItem({ item }: { item: CartItemType }) {
   const { removeItem, updateQuantity, updateWeight } = useCart();
@@ -25,15 +25,15 @@ export default function CartItem({ item }: { item: CartItemType }) {
         <div className="flex items-center gap-2">
           <button
             aria-label="إنقاص الوزن"
-            onClick={() => updateWeight(item.id, +(item.weight! - 0.5).toFixed(1))}
+            onClick={() => updateWeight(item.id, +(item.weight! - 0.25).toFixed(2))}
             className="flex h-8 w-8 items-center justify-center rounded-full bg-cream"
           >
             <Minus size={14} />
           </button>
-          <span className="min-w-[56px] text-center font-cairo font-semibold">{item.weight} كيلو</span>
+          <span className="min-w-[80px] text-center font-cairo font-semibold">{formatWeightLabel(item.weight!)}</span>
           <button
             aria-label="زيادة الوزن"
-            onClick={() => updateWeight(item.id, +(item.weight! + 0.5).toFixed(1))}
+            onClick={() => updateWeight(item.id, +(item.weight! + 0.25).toFixed(2))}
             className="flex h-8 w-8 items-center justify-center rounded-full bg-terracotta text-white"
           >
             <Plus size={14} />
