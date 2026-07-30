@@ -81,7 +81,7 @@ export const useCart = create<CartState>()(
       },
 
       updateWeight: (id, weight) => {
-        if (weight < 0.5) return;
+        if (weight < 0.25) return;
         set((state) => ({
           items: state.items.map((i) =>
             i.id === id ? { ...i, weight, lineTotal: computeLineTotal({ ...i, weight }) } : i
