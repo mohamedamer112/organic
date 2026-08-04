@@ -6,7 +6,7 @@ import { useCart } from "@/hooks/useCart";
 import { formatPrice } from "@/lib/utils";
 import { logOrder } from "@/lib/orders";
 
-const WHATSAPP_PHONE = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || "201124124130";
+const WHATSAPP_PHONE = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || "201002882634";
 
 export default function CartSummary() {
   const { items, totalPrice, clearCart } = useCart();
