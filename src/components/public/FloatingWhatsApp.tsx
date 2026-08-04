@@ -1,4 +1,4 @@
-const WHATSAPP_PHONE = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || "201XXXXXXXXX";
+const WHATSAPP_PHONE = process.env.NEXT_PUBLIC_WHATSAPP_PHONE || "201002882634";
 
 export default function FloatingWhatsApp() {
   const message = encodeURIComponent("مرحباً، أريد الاستفسار عن مخبوزات ORGANIC FOOD");
